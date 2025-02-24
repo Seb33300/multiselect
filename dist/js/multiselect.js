@@ -158,7 +158,7 @@ if (typeof jQuery === 'undefined') {
 
                 // Attach event to left filter
                 if (self.options.search && self.options.search.$left) {
-                    self.options.search.$left.on('keyup', function(e) {
+                    self.options.search.$left.on('input', function(e) {
                         if (self.callbacks.fireSearch(this.value)) {
                             var $toShow = self.$left.find('option:search("' + this.value + '")').mShow();
                             var $toHide = self.$left.find('option:not(:search("' + this.value + '"))').mHide();
@@ -172,7 +172,7 @@ if (typeof jQuery === 'undefined') {
 
                 // Attach event to right filter
                 if (self.options.search && self.options.search.$right) {
-                    self.options.search.$right.on('keyup', function(e) {
+                    self.options.search.$right.on('input', function(e) {
                         if (self.callbacks.fireSearch(this.value)) {
                             var $toShow = self.$right.find('option:search("' + this.value + '")').mShow();
                             var $toHide = self.$right.find('option:not(:search("' + this.value + '"))').mHide();
@@ -189,12 +189,12 @@ if (typeof jQuery === 'undefined') {
                     if (self.options.search) {
                         // Clear left search input
                         if (self.options.search.$left) {
-                            self.options.search.$left.val('').trigger('keyup');
+                            self.options.search.$left.val('').trigger('input');
                         }
 
                         // Clear right search input
                         if (self.options.search.$right) {
-                            self.options.search.$right.val('').trigger('keyup');
+                            self.options.search.$right.val('').trigger('input');
                         }
                     }
 
